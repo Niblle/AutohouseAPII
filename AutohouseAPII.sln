@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutohouseAPII", "AutohouseAPII\AutohouseAPII.csproj", "{161F4928-456F-4B9B-BFE9-5381CDAB2CDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{61D209EB-837D-4EB9-AA87-F12203E21F05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{161F4928-456F-4B9B-BFE9-5381CDAB2CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{161F4928-456F-4B9B-BFE9-5381CDAB2CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{161F4928-456F-4B9B-BFE9-5381CDAB2CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{161F4928-456F-4B9B-BFE9-5381CDAB2CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61D209EB-837D-4EB9-AA87-F12203E21F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61D209EB-837D-4EB9-AA87-F12203E21F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61D209EB-837D-4EB9-AA87-F12203E21F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61D209EB-837D-4EB9-AA87-F12203E21F05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B76BDA04-DC22-4CD7-9395-FD64C8289CA9}
+	EndGlobalSection
+EndGlobal
