@@ -4,7 +4,7 @@
 
 namespace Data.Migrations
 {
-    public partial class Intial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,7 +50,7 @@ namespace Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ModelId = table.Column<int>(type: "int", nullable: false),
-                    EngineSize = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EngineSize = table.Column<double>(type: "float", nullable: false),
                     HoursePower = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

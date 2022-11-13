@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutohouseAPII", "AutohouseA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{61D209EB-837D-4EB9-AA87-F12203E21F05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "ViewModels\ViewModels.csproj", "{98720111-0DC7-4340-B6AF-778C4802ACEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapper", "Mapper\Mapper.csproj", "{99506AEA-2121-401C-9C69-3EEF2CE79EBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{61D209EB-837D-4EB9-AA87-F12203E21F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61D209EB-837D-4EB9-AA87-F12203E21F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61D209EB-837D-4EB9-AA87-F12203E21F05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98720111-0DC7-4340-B6AF-778C4802ACEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98720111-0DC7-4340-B6AF-778C4802ACEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98720111-0DC7-4340-B6AF-778C4802ACEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98720111-0DC7-4340-B6AF-778C4802ACEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99506AEA-2121-401C-9C69-3EEF2CE79EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99506AEA-2121-401C-9C69-3EEF2CE79EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99506AEA-2121-401C-9C69-3EEF2CE79EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99506AEA-2121-401C-9C69-3EEF2CE79EBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

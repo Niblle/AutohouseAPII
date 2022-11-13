@@ -10,7 +10,7 @@ namespace Data.Entities
     {
        
         public Model Model { get;set;}
-        public string EngineSize { get; set; }
+        public double EngineSize { get; set; }
         public int HoursePower { get; set; }    
     }
 }
