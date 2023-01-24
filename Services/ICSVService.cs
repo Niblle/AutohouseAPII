@@ -9,5 +9,6 @@ namespace Services
     public interface ICSVService
     {
         public List<AutoHouseModel> ReadTradesFromFile(string filename);
+        public Task DataFilling(List<AutoHouseModel> autoHouseModels);
     }
 }

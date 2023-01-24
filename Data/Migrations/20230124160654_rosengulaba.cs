@@ -4,10 +4,24 @@
 
 namespace Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class rosengulaba : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "CarSpecifications",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EngineSize = table.Column<double>(type: "float", nullable: true),
+                    HoursePower = table.Column<double>(type: "float", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CarSpecifications", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Manufacturers",
                 columns: table => new
@@ -29,45 +43,30 @@ namespace Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     VehicleType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Widght = table.Column<double>(type: "float", nullable: false),
-                    Length = table.Column<double>(type: "float", nullable: false),
-                    ManufacturerId = table.Column<int>(type: "int", nullable: true)
+                    ManufacturerId = table.Column<int>(type: "int", nullable: false),
+                    CarSpecificationId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Models", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Models_CarSpecifications_CarSpecificationId",
+                        column: x => x.CarSpecificationId,
+                        principalTable: "CarSpecifications",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Models_Manufacturers_ManufacturerId",
                         column: x => x.ManufacturerId,
                         principalTable: "Manufacturers",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CarSpecifications",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ModelId = table.Column<int>(type: "int", nullable: false),
-                    EngineSize = table.Column<double>(type: "float", nullable: false),
-                    HoursePower = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CarSpecifications", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CarSpecifications_Models_ModelId",
-                        column: x => x.ModelId,
-                        principalTable: "Models",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CarSpecifications_ModelId",
-                table: "CarSpecifications",
-                column: "ModelId");
+                name: "IX_Models_CarSpecificationId",
+                table: "Models",
+                column: "CarSpecificationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Models_ManufacturerId",
@@ -78,10 +77,10 @@ namespace Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CarSpecifications");
+                name: "Models");
 
             migrationBuilder.DropTable(
-                name: "Models");
+                name: "CarSpecifications");
 
             migrationBuilder.DropTable(
                 name: "Manufacturers");

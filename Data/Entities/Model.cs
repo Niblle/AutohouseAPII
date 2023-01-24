@@ -10,8 +10,11 @@ namespace Data.Entities
     {
         public string Name { get; set; }
         public string VehicleType { get; set; }
+        public int ManufacturerId { get; set; }
+        public Manufacturer Manufacturer { get; set; }
+        public int CarSpecificationId { get; set; }
+        public CarSpecification CarSpecification { get; set; }
 
-        public double Widght { get; set; }
-        public double Length { get; set; }
+
     }
 }

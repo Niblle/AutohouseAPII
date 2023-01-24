@@ -30,18 +30,13 @@ namespace Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<double>("EngineSize")
+                    b.Property<double?>("EngineSize")
                         .HasColumnType("float");
 
-                    b.Property<int>("HoursePower")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ModelId")
-                        .HasColumnType("int");
+                    b.Property<double?>("HoursePower")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ModelId");
 
                     b.ToTable("CarSpecifications");
                 });
@@ -71,10 +66,10 @@ namespace Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<double>("Length")
-                        .HasColumnType("float");
+                    b.Property<int>("CarSpecificationId")
+                        .HasColumnType("int");
 
-                    b.Property<int?>("ManufacturerId")
+                    b.Property<int>("ManufacturerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -85,37 +80,32 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Widght")
-                        .HasColumnType("float");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("CarSpecificationId");
 
                     b.HasIndex("ManufacturerId");
 
                     b.ToTable("Models");
                 });
 
-            modelBuilder.Entity("Data.Entities.CarSpecification", b =>
+            modelBuilder.Entity("Data.Entities.Model", b =>
                 {
-                    b.HasOne("Data.Entities.Model", "Model")
+                    b.HasOne("Data.Entities.CarSpecification", "CarSpecification")
                         .WithMany()
-                        .HasForeignKey("ModelId")
+                        .HasForeignKey("CarSpecificationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Model");
-                });
+                    b.HasOne("Data.Entities.Manufacturer", "Manufacturer")
+                        .WithMany()
+                        .HasForeignKey("ManufacturerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("Data.Entities.Model", b =>
-                {
-                    b.HasOne("Data.Entities.Manufacturer", null)
-                        .WithMany("Model")
-                        .HasForeignKey("ManufacturerId");
-                });
+                    b.Navigation("CarSpecification");
 
-            modelBuilder.Entity("Data.Entities.Manufacturer", b =>
-                {
-                    b.Navigation("Model");
+                    b.Navigation("Manufacturer");
                 });
 #pragma warning restore 612, 618
         }

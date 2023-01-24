@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Entities
+namespace Services.CarModel
 {
-    public class Manufacturer:BaseClass
+    public interface ICarModelService
     {
-        
-        public string Name { get; set; }  
-       
     }
 }
