@@ -8,9 +8,8 @@ namespace ViewModels
 {
     public class CarSpecificationViewModel
     {
-        public double Engine_size { get; set; }
-        public int Hoursepower { get; set; }
-
+        public double EngineSize { get; set; }
+        public int HoursePower { get; set; }
 
     }
 }

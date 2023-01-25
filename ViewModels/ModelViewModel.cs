@@ -2,11 +2,9 @@
 {
     public class ModelViewModel
     {
+        public string Name { get; set; }
         public string Manufacturer { get; set; }
-        public string Vehicle_type { get; set; }
-        public double Width { get; set; }
-        public double Length { get; set; }
-
-
+        public string VehicleType { get; set; }
+        public string CarSpecification { get; set; }
     }
 }

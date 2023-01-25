@@ -8,7 +8,7 @@ namespace ViewModels
 {
     public class ManufacturerViewModel
     {
-        public string Manufacturer {get;set;}
+        public string Name {get;set;}
 
     }
 }
