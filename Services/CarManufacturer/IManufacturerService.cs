@@ -6,12 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using ViewModels;
 
-namespace Services.CarModel
+namespace Services.CarManufacturer
 {
-    public interface ICarModelService
+    public interface IManufacturerService
     {
-        public List<Model> GetModels();
         public bool Delite(int id);
-        public bool Update(int id, ModelViewModel model);
+        public List<Manufacturer> GetModels();
+        public bool Update(int id, ManufacturerViewModel model);
     }
 }
